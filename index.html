@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PPT Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-8">
+        <h1 class="text-2xl font-bold mb-4">AI PPT Generator</h1>
+        <form id="ppt-form" class="mb-4">
+            <div class="mb-4">
+                <label for="prompt" class="block text-gray-700 text-sm font-bold mb-2">Presentation Content:</label>
+                <div class="flex">
+                    <textarea id="prompt" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4" placeholder="Enter your presentation topic"></textarea>
+                    <button type="button" id="generate-content-button" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2">Generate Content</button>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="openrouter-api-key" class="block text-gray-700 text-sm font-bold mb-2">OpenRouter API Key:</label>
+                <div class="flex">
+                    <input type="text" id="openrouter-api-key" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your OpenRouter API Key">
+                    <button type="button" id="test-openrouter-button" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2">Test Connection</button>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="openrouter-llm" class="block text-gray-700 text-sm font-bold mb-2">OpenRouter LLM:</label>
+                <input type="text" id="openrouter-llm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter OpenRouter LLM (e.g., openai/gpt-3.5-turbo)" value="google/gemini-2.0-flash-001">
+            </div>
+            <div class="mb-4">
+                <label for="siliconflow-api-key" class="block text-gray-700 text-sm font-bold mb-2">Siliconflow API Key:</label>
+                <div class="flex">
+                    <input type="text" id="siliconflow-api-key" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your Siliconflow API Key" value="sk-mdkwkbklsycmjxjhstkxpfgsuzmfnwxwsqrnbmqlhxljitsq" disabled>
+                    <button type="button" id="test-siliconflow-button" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2">Test Connection</button>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="siliconflow-llm" class="block text-gray-700 text-sm font-bold mb-2">Siliconflow LLM:</label>
+                <input type="text" id="siliconflow-llm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter Siliconflow LLM (e.g., Kwai-Kolors/Kolors)" value="Kwai-Kolors/Kolors">
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Generate PPT</button>
+        </form>
+        <div id="download-link"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

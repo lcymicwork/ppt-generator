@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - SILICONFLOW_API_TOKEN=${SILICONFLOW_API_TOKEN}
